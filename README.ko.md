@@ -51,6 +51,20 @@ java -jar TokenAnalyzer.jar
 2. `lib/flatlaf-3.6.jar`가 빌드 패스에 추가되어 있는지 확인합니다.
 3. `Main.java`를 실행합니다.
 
+## 스크린샷
+
+### Identifier 탭
+
+![Identifier](./images/identifier.png)
+
+### JWT 탭
+
+![JWT](./images/jwt.png)
+
+### Flask Session Token 탭
+
+![Flask](./images/flask.png)
+
 ## 사용법
 
 ### Identifier 탭

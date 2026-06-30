@@ -50,6 +50,20 @@ java -jar TokenAnalyzer.jar
 2. Ensure `lib/flatlaf-3.6.jar` is on the build path.
 3. Run `Main.java`.
 
+## Screenshots
+
+### Identifier Tab
+
+![Identifier](./images/identifier.png)
+
+### JWT Tab
+
+![JWT](./images/jwt.png)
+
+### Flask Session Token Tab
+
+![Flask](./images/flask.png)
+
 ## Usage
 
 ### Identifier Tab
