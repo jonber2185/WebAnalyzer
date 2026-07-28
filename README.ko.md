@@ -1,6 +1,6 @@
 # Token Analyzer
 
-> **JWT**와 **Flask Session Token**을 분석, 디코딩, 인코딩, 브루트포스할 수 있는 Java Swing 데스크톱 애플리케이션입니다.
+> **JWT**와 **Flask Session Token**을 분석, 디코딩, 인코딩, 브루트포스하고, Unix 타임스탬프를 변환할 수 있는 Java Swing 데스크톱 애플리케이션입니다.
 
 [English](README.md)
 
@@ -17,6 +17,9 @@
   - 페이로드 및 타임스탬프 디코딩
   - 커스텀 페이로드·시크릿으로 새 토큰 생성
   - 워드리스트 파일을 이용한 서명 시크릿 브루트포스
+- **Timestamp**
+  - 날짜/시간 문자열을 Unix 타임스탬프(초·밀리초, 10진수·16진수)로 인코딩
+  - Unix 타임스탬프(10진수 또는 `0x`가 붙은 16진수)를 원하는 타임존(UTC, Asia/Seoul 등)의 날짜/시간으로 디코딩
 
 ## 기술 스택
 
@@ -65,6 +68,10 @@ java -jar TokenAnalyzer.jar
 
 ![Flask](./images/flask.png)
 
+### Timestamp 탭
+
+![Timestamp](./images/timestamp.png)
+
 ## 사용법
 
 ### Identifier 탭
@@ -86,6 +93,13 @@ java -jar TokenAnalyzer.jar
 | Decode | Flask 세션 토큰을 붙여넣어 페이로드와 생성 시각을 디코딩 |
 | Encode | 페이로드 JSON과 시크릿을 입력해 새 Flask 세션 토큰 생성 |
 | Brute Force | 토큰과 워드리스트 파일 경로를 입력해 서명 시크릿 탐색 |
+
+### Timestamp 탭
+
+| 탭 | 설명 |
+|---|---|
+| Encode | 날짜/시간 문자열(예: `2026-07-27T17:04:39.463Z`)을 입력하면 초/밀리초 단위 Unix 타임스탬프를 10진수·16진수로 표시 |
+| Decode | Unix 타임스탬프(10진수 또는 `0x`가 붙은 16진수)를 입력하고 타임존을 선택하면 해당 날짜/시간을 표시 |
 
 ## 토큰 형식
 

@@ -18,7 +18,7 @@ public class IdentifierController {
 		String token = view.getToken();
 
 		if (token.isEmpty()) {
-			view.updateResult("토큰이 입력되지 않았습니다.", Color.RED);
+			view.updateResult("Token not entered", Color.RED);
 			return;
 		}
 		

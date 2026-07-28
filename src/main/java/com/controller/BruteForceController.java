@@ -25,7 +25,7 @@ public class BruteForceController {
         SwingWorker<BruteForceResult, Void> worker = new SwingWorker<>() {
         	@Override
             public BruteForceResult doInBackground() throws Exception {
-        		view.setResult("진행 중..", Color.BLACK);
+        		view.setResult("In progress..", Color.BLACK);
         		view.setAttackButtonEnabled(false); // 버튼 비활성화
                 BruteForceResult result = processor.bruteForce(token, filePath);
                 return result;
@@ -39,12 +39,12 @@ public class BruteForceController {
         			if (result.isSuccess()) view.setResult(result.getFoundKey(), Color.BLUE);
         			else {
         				if (result.getMessage().equals("No Match Result.")) {
-        					view.setResult("결과 없음.", Color.RED);
+        					view.setResult("No Match Result.", Color.RED);
         				} else throw new Exception(result.getMessage());
         			}
         		} catch (Exception e) {
-        			view.setResult("오류 발생", Color.RED);
-                    JOptionPane.showMessageDialog(view, "에러: " + e.getMessage(), "오류", JOptionPane.ERROR_MESSAGE);
+        			view.setResult("ERROR occur", Color.RED);
+                    JOptionPane.showMessageDialog(view, "error: " + e.getMessage(), "error", JOptionPane.ERROR_MESSAGE);
         		} finally {
         			view.setAttackButtonEnabled(true); // 버튼 활성화
         		}

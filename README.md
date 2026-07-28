@@ -17,6 +17,9 @@
   - Decode payload and timestamp
   - Encode a new token with custom payload and secret
   - Brute-force the signing secret using a wordlist file
+- **Timestamp**
+  - Encode a date/time string into a Unix timestamp (seconds and milliseconds, in both decimal and hexadecimal)
+  - Decode a Unix timestamp (decimal or `0x`-prefixed hexadecimal) back into a human-readable date/time, with selectable timezone (UTC, Asia/Seoul, and more)
 
 ## Tech Stack
 
@@ -64,6 +67,10 @@ java -jar TokenAnalyzer.jar
 
 ![Flask](./images/flask.png)
 
+### Timestamp Tab
+ 
+![Timestamp](./images/timestamp.png)
+
 ## Usage
 
 ### Identifier Tab
@@ -85,6 +92,13 @@ Paste any token into the input field and click **Identify**. The app will detect
 | Decode | Paste a Flask session token to decode its payload and creation timestamp |
 | Encode | Enter payload JSON and a secret to generate a new Flask session token |
 | Brute Force | Provide a token and a wordlist file path to search for the signing secret |
+
+### Timestamp Tab
+ 
+| Tab | Description |
+|---|---|
+| Encode | Enter a date/time string (e.g. `2026-07-27T17:04:39.463Z`) to get its Unix timestamp in seconds and milliseconds, each shown in decimal and hexadecimal |
+| Decode | Enter a Unix timestamp (decimal, or hexadecimal prefixed with `0x`) and select a timezone to view the corresponding date/time |
 
 ## Token Formats
 

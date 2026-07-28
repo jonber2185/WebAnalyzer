@@ -3,6 +3,7 @@ package main.java.com.view.panels;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
 
@@ -17,8 +18,9 @@ import main.java.com.model.type.TokenType;
 import main.java.com.view.components.JsonInputArea;
 import main.java.com.view.components.ResultBox;
 import main.java.com.view.utils.MyInputField;
+import main.java.com.view.utils.WindowSizable;
 
-public abstract class BaseEncodePanel extends JPanel {
+public abstract class BaseEncodePanel extends JPanel implements WindowSizable {
 
 	/**
 	 * 
@@ -40,7 +42,7 @@ public abstract class BaseEncodePanel extends JPanel {
         JPanel inputPanel = new JPanel(new GridLayout(1, 2, 10, 0));
         if (type == TokenType.JWT) inputPanel.add(headerArea);
         inputPanel.add(payloadArea);
-        add(inputPanel, BorderLayout.CENTER);
+        add(inputPanel, BorderLayout.NORTH);
 
         // bottom div, flex-direction : column
         JPanel bottomPanel = new JPanel();
@@ -66,7 +68,7 @@ public abstract class BaseEncodePanel extends JPanel {
         	resultBox = new ResultBox("Flask Session Token", 500, 100);
         }
         bottomPanel.add(resultBox);
-        add(bottomPanel, BorderLayout.SOUTH);
+        add(bottomPanel, BorderLayout.CENTER);
         
         encodeBtn.addActionListener(e -> onEncodeClick());
     }
@@ -83,4 +85,8 @@ public abstract class BaseEncodePanel extends JPanel {
     	resultBox.updateResult(jwt, new Font("Pretendard", Font.PLAIN, 14), color); 
 	}
 
+    @Override
+	public Dimension getWindowSize() {
+		return new Dimension(600, 500);
+	}
 }
