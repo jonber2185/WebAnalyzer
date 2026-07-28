@@ -1,12 +1,16 @@
-package main.java.com.view.panels;
+package main.java.com.view.panels.timestamp;
 
-import java.awt.*;
-import javax.swing.*;
+import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.Dimension;
+
+import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
 
 import main.java.com.view.MainFrame;
 import main.java.com.view.utils.WindowSizable;
 
-public abstract class TokenPanel extends JPanel implements WindowSizable {
+public class TimestampPanel extends JPanel implements WindowSizable {
 
 	/**
 	 * 
@@ -15,19 +19,14 @@ public abstract class TokenPanel extends JPanel implements WindowSizable {
 
 	private JTabbedPane subTabPane = new JTabbedPane();
 	
-	public TokenPanel() {
+	public TimestampPanel() {
         setLayout(new BorderLayout());
 
-        subTabPane.addTab("encode", encode());
-        subTabPane.addTab("decode", decode());
-        subTabPane.addTab("brute-force", bruteForce());
+        subTabPane.addTab("encode", new TimestampEncodePanel());
+        subTabPane.addTab("decode", new TimestampDecodePanel());
 
         add(subTabPane, BorderLayout.CENTER);
     }
-	
-	public abstract JPanel encode();
-	public abstract JPanel decode();
-	public abstract JPanel bruteForce();
 	
 	@Override
 	public Dimension getWindowSize() {
@@ -35,7 +34,6 @@ public abstract class TokenPanel extends JPanel implements WindowSizable {
 		if (selected instanceof WindowSizable) {
 			return ((WindowSizable) selected).getWindowSize();
 		}
-		
 		return MainFrame.DEFAULT_SIZE;
 	}
  

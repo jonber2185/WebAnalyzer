@@ -30,7 +30,7 @@ public class EncodeController {
             	view.setResult(result.getToken(), Color.BLACK);
             } else throw new Exception(result.getMessage());
         } catch (Exception e) {
-        	view.setResult("에러 발생!\n" + e.getMessage(), Color.RED);
+        	view.setResult("ERROR OCCUR!\n" + e.getMessage(), Color.RED);
         	JOptionPane.showMessageDialog(view, e.getMessage(), "Warning", JOptionPane.WARNING_MESSAGE);
         }
     }

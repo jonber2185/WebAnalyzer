@@ -19,8 +19,8 @@ public abstract class BaseBruteForcePanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 
 	private TokenInputArea inputArea = new TokenInputArea();
-	private MyInputField filePathField = new MyInputField("파일을 선택해주세요...");
-    private JButton fileOpenBtn = new JButton("파일 찾기");
+	private MyInputField filePathField = new MyInputField("Select a file...");
+    private JButton fileOpenBtn = new JButton("Find file");
     private JButton attackBtn = new JButton("Attack");
     private ResultBox resultBox = new ResultBox("Secret Key", 450, 50);
 

@@ -23,7 +23,7 @@ public class TokenInputArea extends JPanel {
 		setLayout(new BorderLayout(0, 5));
 		
 		// input label
-		JLabel label = new JLabel("토큰을 입력하세요:");
+		JLabel label = new JLabel("Input Token:");
 		label.setFont(new Font("Pretendard", Font.BOLD, 12));
 		add(label, BorderLayout.NORTH);
 		

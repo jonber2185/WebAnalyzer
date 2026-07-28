@@ -1,6 +1,7 @@
 package main.java.com;
 
 import main.java.com.view.MainFrame;
+
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
